@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://memetic-velocity.onrender.com";
 
 interface TrackResult {
   claim_id: number;
