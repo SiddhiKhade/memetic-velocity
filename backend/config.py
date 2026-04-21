@@ -9,6 +9,7 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 # HuggingFace
 HF_API_KEY = os.getenv("HF_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # Domains to track
 DOMAINS = ["Tech & AI", "Financial", "Political", "Health"]

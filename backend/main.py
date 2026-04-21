@@ -118,3 +118,16 @@ def run_all():
 def add_claim(text: str, domain: str):
     claim = insert_claim(text, domain)
     return claim
+
+@app.post("/track")
+def track_claim(text: str, domain: str = "Custom"):
+    # First insert as a new claim
+    new_claim = insert_claim(text, domain)
+    if not new_claim:
+        return {"error": "Failed to create claim"}
+    
+    claim_id = new_claim["id"]
+    
+    # Then run the full pipeline on it
+    result = run_pipeline(claim_id)
+    return result
